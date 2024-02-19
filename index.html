@@ -133,7 +133,7 @@
             const jsonData = { key1: 'value1', key2: 'value2', message: 'test' };
             
             let initData = sessionStorage.getItem('__telegram__initParams');
-            let authorization = initData["tgWebAppData"];
+            let authorization = initData.tgWebAppData;
             console.log("auth:");
             console.log(initData);
             console.log(authorization);
