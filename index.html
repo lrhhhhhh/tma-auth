@@ -132,6 +132,7 @@
             const url = 'http://165.22.51.161:8082/';
             const jsonData = { key1: 'value1', key2: 'value2' };
             const authorization = sessionStorage.getItem('__telegram_initParams');
+            console.log(authorization);
             fetch(url, {
               method: 'POST',
               headers: {
