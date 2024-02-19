@@ -87,6 +87,7 @@
         <h1>Buttons</h1>
         <button onclick="Telegram.WebApp.expand();">Expand Webview</button>
         <button onclick="toggleMainButton();">Toggle Main Button</button>
+        <button onclick="pingBackendBtn();">Auth Ping backend</button>
     </main>
     <div id="viewport"></div>
     <div id="viewport-params-size"></div>
@@ -125,6 +126,29 @@
                 }
             });
         };
+
+        // ping backend
+        function pingBackendBtn() {
+            const url = 'http://165.22.51.161:8082/';
+            const jsonData = { key1: 'value1', key2: 'value2' };
+            const authorization = sessionStorage.getItem('__telegram_initParams');
+            fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${authorization}`  // 设置 Authorization 头
+              },
+              body: JSON.stringify(jsonData)  // 转换 JSON 数据为字符串
+            })
+              .then(response => response.json())
+              .then(data => {
+                console.log('Response:', data);
+              })
+              .catch(error => {
+                console.error('Error:', error);
+              });
+        };
+        
 
         // Function to toggle main TWA button
         function toggleMainButton() {
