@@ -134,19 +134,15 @@
             
             let initDataStr = sessionStorage.getItem('__telegram__initParams');
             let initData = JSON.parse(initDataStr);
-            console.log("pass");
-            console.log(initData);
-            console.log(initData['tgWebAppData']);
-            console.log(initData["tgWebAppData"]);
-            console.log(initData.tgWebAppData);
-            console.log(initData.getItem('tgWebAppData'));
-            let authorization = initData.tgWebAppData;
-            console.log("auth:");
-            console.log(initData);
-            console.log(authorization);
-            if(authorization==null) {
-                authorization = '';
-            }
+            let authorization = initData['tgWebAppData'];
+
+            console.log("initData: ", initData);
+            console.log("authorization: ", authorization);
+            
+            // if(authorization==null) {
+            //     authorization = '';
+            // }
+            
             fetch(url, {
               method: 'POST',
               headers: {
