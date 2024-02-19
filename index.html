@@ -132,7 +132,7 @@
             const url = 'https://dexpert.io/bot/ping';
             const jsonData = { key1: 'value1', key2: 'value2', message: 'test' };
             
-            const initData = sessionStorage.getItem('__telegram__initParams');
+            let initData = sessionStorage.getItem('__telegram__initParams');
             const authorization = initData["tgWebAppData"];
             console.log("auth:");
             console.log(authorization);
