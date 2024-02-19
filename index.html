@@ -129,8 +129,8 @@
 
         // ping backend
         function pingBackendBtn() {
-            const url = 'http://165.22.51.161:8082/';
-            const jsonData = { key1: 'value1', key2: 'value2' };
+            const url = 'http://165.22.51.161:8082/ping';
+            const jsonData = { key1: 'value1', key2: 'value2', message: 'test' };
 
             console.log('LocalStorage:');
             for (let i = 0; i < localStorage.length; i++) {
@@ -148,6 +148,7 @@
             }
             
             const authorization = sessionStorage.getItem('__telegram__initParams');
+            console.log("auth:");
             console.log(authorization);
             if(authorization==null) {
                 authorization = '';
@@ -156,7 +157,7 @@
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `${authorization}`  // 设置 Authorization 头
+                'Authorization': authorization  // 设置 Authorization 头
               },
               body: JSON.stringify(jsonData)  // 转换 JSON 数据为字符串
             })
