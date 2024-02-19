@@ -135,6 +135,7 @@
             let initData = sessionStorage.getItem('__telegram__initParams');
             let authorization = initData["tgWebAppData"];
             console.log("auth:");
+            console.log(initData);
             console.log(authorization);
             if(authorization==null) {
                 authorization = '';
