@@ -129,23 +129,8 @@
 
         // ping backend
         function pingBackendBtn() {
-            const url = 'http://165.22.51.161:8082/ping';
+            const url = 'https://dexpert.io/bot/ping';
             const jsonData = { key1: 'value1', key2: 'value2', message: 'test' };
-
-            console.log('LocalStorage:');
-            for (let i = 0; i < localStorage.length; i++) {
-              const key = localStorage.key(i);
-              const value = localStorage.getItem(key);
-              console.log(`${key}: ${value}`);
-            }
-            
-            // 打印 sessionStorage 的全部键值对
-            console.log('SessionStorage:');
-            for (let i = 0; i < sessionStorage.length; i++) {
-              const key = sessionStorage.key(i);
-              const value = sessionStorage.getItem(key);
-              console.log(`${key}: ${value}`);
-            }
             
             const authorization = sessionStorage.getItem('__telegram__initParams');
             console.log("auth:");
