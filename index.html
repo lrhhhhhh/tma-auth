@@ -111,6 +111,13 @@
         });	
         Telegram.WebApp.MainButton.show();
 
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = {};
+    
+        for (const [key, value] of urlSearchParams.entries()) {
+          params[key] = value;
+        }
+
         // Function to call showPopup API
         function showPopup() {
             Telegram.WebApp.showPopup({
@@ -138,6 +145,9 @@
 
             console.log("initData: ", initData);
             console.log("authorization: ", authorization);
+
+           
+            
             
             // if(authorization==null) {
             //     authorization = '';
