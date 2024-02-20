@@ -134,14 +134,19 @@
         // ping backend
         function pingBackendBtn() {
                console.log("start");
-        const urlSearchParams = new URLSearchParams(window.location.search);
-        const params = {};
-    
-        for (const [key, value] of urlSearchParams.entries()) {
-          params[key] = value;
-        }
+                const urlSearchParams = new URLSearchParams(window.location.search);
+                const params = {};
+            
+                for (const [key, value] of urlSearchParams.entries()) {
+                  params[key] = value;
+                }
+        
+                console.log(params);
 
-        console.log(params);
+
+            let startParam = window.Telegram.WebApp.initDataUnsafe.start_param;
+            console.log(startParam);
+            
 
             
             const url = 'https://dexpert.io/bot/ping';
