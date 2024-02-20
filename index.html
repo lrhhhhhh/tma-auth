@@ -94,15 +94,7 @@
     <div id="viewport-params-expand"></div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        console.log("start");
-        const urlSearchParams = new URLSearchParams(window.location.search);
-        const params = {};
-    
-        for (const [key, value] of urlSearchParams.entries()) {
-          params[key] = value;
-        }
-
-        console.log(params);
+     
         
         // Init TWA
         Telegram.WebApp.ready();
@@ -141,6 +133,17 @@
 
         // ping backend
         function pingBackendBtn() {
+               console.log("start");
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = {};
+    
+        for (const [key, value] of urlSearchParams.entries()) {
+          params[key] = value;
+        }
+
+        console.log(params);
+
+            
             const url = 'https://dexpert.io/bot/ping';
             const jsonData = { key1: 'value1', key2: 'value2', message: 'test' };
             
