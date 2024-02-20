@@ -111,6 +111,12 @@
         Telegram.WebApp.MainButton.onClick(function () {
             Telegram.WebApp.showAlert('Main Button was clicked')
         });	
+
+        let dunsafe = Telegram.WebApp.initDataUnsafe
+        let startParam = dunsafe.start_param;
+        console.log("outer: ", dunsafe);
+        console.log("outer: ", startParam);
+        
         Telegram.WebApp.MainButton.show();
 
         
@@ -144,9 +150,11 @@
                 console.log(params);
 
 
-            let startParam = Telegram.WebApp.initDataUnsafe.start_param;
-            console.log(startParam);
-            
+            let dunsafe = Telegram.WebApp.initDataUnsafe
+        let startParam = dunsafe.start_param;
+        console.log("outer: ", dunsafe);
+        console.log("outer: ", startParam);
+        
 
             
             const url = 'https://dexpert.io/bot/ping';
